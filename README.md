@@ -1,11 +1,11 @@
 # Naresh.dev — Developer Portfolio
 
-[![Deploy](https://img.shields.io/badge/Deploy-Cloudflare_Pages-F38020?style=flat&logo=cloudflarepages&logoColor=white)](#)
+[![Deploy](https://img.shields.io/badge/Deploy-Cloudflare_Pages-F38020?style=flat&logo=cloudflarepages&logoColor=white)](https://nareshkumar.pages.dev)
 [![Stack](https://img.shields.io/badge/Stack-ES6+_%7C_Tailwind_CDN-06B6D4?style=flat&logo=tailwindcss&logoColor=white)](#)
 
 > Source code for the personal portfolio of **Nareshkumar (Naresh)** — Python Backend & GenAI Developer. Built with zero-dependency vanilla web standards to showcase enterprise ETL pipelines, vectorless RAG, and autonomous AI workflows.
 
-[Explore Live Portfolio →](#)
+[Explore Live Portfolio →](https://nareshkumar.pages.dev)
 
 ---
 

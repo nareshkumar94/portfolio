@@ -28,6 +28,7 @@ This website is engineered as a clean, high-performance static Single Page Appli
 portfolio/
 ├── index.html            # Core single-page application (dual-hydrated, responsive)
 ├── portfolio-data.json   # Single source of truth content model
+├── favicon.svg           # Official terminal vector favicon
 ├── Nareshkumar_Resume.pdf# Current executive resume (PDF)
 ├── _headers              # Edge CDN cache-control specification (Cloudflare Pages)
 └── README.md             # Project documentation

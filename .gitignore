@@ -1,0 +1,14 @@
+# Archived scratch & draft files
+archive/
+
+# Internal Agent Steering & Confidentiality Specs (Keep local)
+AGENTS.md
+
+# Operating System & Editor artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.bak
+

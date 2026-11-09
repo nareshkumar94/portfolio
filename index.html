@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport"/>
+    <title>Naresh | Python Backend & GenAI Systems Developer</title>
+    <meta name="description" content="Portfolio of Naresh (Nareshkumar) - Python Backend & GenAI Developer specializing in FastAPI, LangGraph, ClickHouse OLAP, and Enterprise Data & AI Pipelines."/>
+    
+    <!-- OpenGraph / Social Sharing -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Naresh | Python Backend & GenAI Systems Developer"/>
+    <meta property="og:description" content="2+ years building enterprise AI workflows, self-healing ClickHouse ETL pipelines, LangGraph vectorless RAG, and high-performance FastAPI backends."/>
+    <meta property="twitter:card" content="summary_large_image"/>
+
+    <!-- Google Fonts & Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec9c13",
+                        "primary-hover": "#d98b0a",
+                        "background-dark": "#0a0c10",
+                        "surface-dark": "#12151d",
+                        "surface-elevated": "#181d28",
+                        "border-dark": "#232838",
+                        "border-light": "#2f364a",
+                        "accent-emerald": "#10b981",
+                        "accent-cyan": "#06b6d4",
+                        "accent-blue": "#38bdf8"
+                    },
+                    fontFamily: {
+                        "sans": ["Inter", "sans-serif"],
+                        "mono": ["'Fira Code'", "monospace"]
+                    },
+                    screens: {
+                        "xs": "420px"
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0c10;
+            color: #cbd5e1;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        ::selection {
+            background-color: #ec9c13;
+            color: #0a0c10;
+        }
+
+        /* Fade-in animation on scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile menu transitions */
+        #mobile-menu {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+        }
+
+        /* Pulsing status indicator */
+        @keyframes pulse-dot {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.3); opacity: 0.6; }
+        }
+        .pulse-status {
+            animation: pulse-dot 2s infinite ease-in-out;
+        }
+
+        /* Custom scrollbar for telemetry terminal */
+        .terminal-scroll::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        .terminal-scroll::-webkit-scrollbar-track {
+            background: #0a0c10;
+        }
+        .terminal-scroll::-webkit-scrollbar-thumb {
+            background: #232838;
+            border-radius: 2px;
+        }
+        .terminal-scroll::-webkit-scrollbar-thumb:hover {
+            background: #ec9c13;
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-slate-300 min-h-screen selection:bg-primary selection:text-black antialiased w-full">
+
+<!-- TOP SYSTEM STATUS BAR -->
+<div class="border-b border-border-dark bg-surface-dark/95 py-1.5 px-4 sm:px-6 text-[10px] sm:text-[11px] font-mono text-slate-400">
+    <div class="max-w-[1240px] mx-auto flex items-center justify-between gap-2">
+        <div class="flex items-center gap-2 sm:gap-3 truncate">
+            <span class="flex items-center gap-1.5 text-accent-emerald font-semibold shrink-0">
+                <span class="inline-block size-2 rounded-full bg-accent-emerald pulse-status"></span>
+                <span>SYSTEM: OPERATIONAL</span>
+            </span>
+            <span class="text-slate-600 hidden md:inline">|</span>
+            <span class="text-slate-400 hidden sm:inline truncate">PYTHON BACKEND & GENAI SYSTEMS</span>
+            <span class="text-slate-600 hidden lg:inline">|</span>
+            <span class="text-slate-400 hidden lg:inline">EXP: 2+ YEARS</span>
+        </div>
+        <div class="flex items-center gap-3 sm:gap-4 shrink-0 text-xs">
+            <a id="status-github-link" href="https://github.com/nareshkumar94" target="_blank" rel="noreferrer" class="hover:text-primary transition-colors flex items-center gap-0.5">
+                <span>GitHub</span>
+                <span class="material-symbols-outlined text-[13px]">open_in_new</span>
+            </a>
+            <a id="status-linkedin-link" href="https://www.linkedin.com/in/nareshkumar94" target="_blank" rel="noreferrer" class="hover:text-primary transition-colors flex items-center gap-0.5">
+                <span>LinkedIn</span>
+                <span class="material-symbols-outlined text-[13px]">open_in_new</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- STICKY HEADER -->
+<header class="sticky top-0 z-50 w-full border-b border-border-dark bg-background-dark/95 backdrop-blur-md">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-2">
+        <a href="#" class="flex items-center gap-2.5 sm:gap-3 group focus:outline-none focus:ring-1 focus:ring-primary/40 rounded p-1">
+            <div class="text-primary size-8 sm:size-9 flex items-center justify-center border border-primary/30 rounded bg-surface-dark group-hover:border-primary transition-colors shrink-0">
+                <span class="material-symbols-outlined text-lg sm:text-xl">terminal</span>
+            </div>
+            <div class="flex flex-col">
+                <span id="nav-brand-name" class="text-sm sm:text-base font-bold tracking-tight text-white font-mono leading-none">Naresh<span class="text-primary">.dev</span></span>
+                <span class="text-[8px] sm:text-[9px] font-mono text-slate-500 uppercase tracking-wider mt-0.5">Backend & GenAI</span>
+            </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-xs font-mono tracking-wider">
+            <a class="text-slate-400 hover:text-primary transition-colors py-1" href="#systems">// SYSTEMS</a>
+            <a class="text-slate-400 hover:text-primary transition-colors py-1" href="#telemetry">// TELEMETRY</a>
+            <a class="text-slate-400 hover:text-primary transition-colors py-1" href="#experience">// EXPERIENCE</a>
+            <a class="text-slate-400 hover:text-primary transition-colors py-1" href="#certificates">// CREDENTIALS</a>
+            <a class="text-slate-400 hover:text-primary transition-colors py-1" href="#ecosystem">// STACK</a>
+            <a class="text-slate-400 hover:text-primary transition-colors py-1" href="#education">// EDUCATION</a>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+            <a id="header-contact-link" href="mailto:nareshkumar04094@gmail.com" class="border border-border-light hover:border-primary text-slate-300 hover:text-white px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded text-xs font-mono transition-all hidden xs:inline-flex items-center gap-1.5 bg-surface-dark">
+                <span class="material-symbols-outlined text-sm text-primary">mail</span>
+                <span>Contact</span>
+            </a>
+            <a id="header-resume-link" href="Nareshkumar_Resume.pdf" download="Nareshkumar_Resume.pdf" target="_blank" rel="noopener" class="bg-primary hover:bg-primary-hover text-background-dark px-3 sm:px-4 py-1.5 sm:py-2 rounded text-xs font-bold font-mono uppercase tracking-wider transition-all flex items-center gap-1.5 shadow-lg shadow-primary/10">
+                <span class="material-symbols-outlined text-sm">download</span>
+                <span>Resume</span>
+            </a>
+            <button id="menu-btn" class="lg:hidden text-slate-400 hover:text-primary transition-colors p-1.5 rounded focus:outline-none flex items-center justify-center" aria-label="Toggle navigation menu">
+                <span class="material-symbols-outlined text-2xl">menu</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- MOBILE MENU DRAWER (FULL HEIGHT OVERLAY) -->
+<div id="mobile-menu" class="fixed inset-0 z-[100] bg-background-dark/98 backdrop-blur-2xl transform -translate-y-full transition-transform duration-300 ease-in-out pointer-events-none lg:hidden flex flex-col h-screen overflow-y-auto">
+    <div class="flex items-center justify-between px-4 sm:px-6 h-14 sm:h-16 border-b border-border-dark shrink-0">
+        <div class="flex items-center gap-2.5">
+            <div class="text-primary size-8 flex items-center justify-center border border-primary/20 rounded">
+                <span class="material-symbols-outlined text-lg">terminal</span>
+            </div>
+            <span class="text-sm sm:text-base font-bold font-mono text-white">Naresh<span class="text-primary">.dev</span></span>
+        </div>
+        <button id="close-btn" class="text-slate-400 hover:text-primary transition-colors p-2" aria-label="Close menu">
+            <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+    </div>
+    <div class="flex flex-col justify-center items-center flex-1 gap-5 py-8 font-mono text-base px-6 text-center">
+        <a class="mobile-link text-slate-300 hover:text-primary transition-colors py-2 w-full" href="#systems">// 01. ENTERPRISE SYSTEMS</a>
+        <a class="mobile-link text-slate-300 hover:text-primary transition-colors py-2 w-full" href="#telemetry">// 02. LIVE TELEMETRY</a>
+        <a class="mobile-link text-slate-300 hover:text-primary transition-colors py-2 w-full" href="#experience">// 03. EXPERIENCE</a>
+        <a class="mobile-link text-slate-300 hover:text-primary transition-colors py-2 w-full" href="#certificates">// 04. CREDENTIALS</a>
+        <a class="mobile-link text-slate-300 hover:text-primary transition-colors py-2 w-full" href="#ecosystem">// 05. TECH STACK</a>
+        <a class="mobile-link text-slate-300 hover:text-primary transition-colors py-2 w-full" href="#education">// 06. EDUCATION</a>
+        
+        <div class="pt-6 border-t border-border-dark w-full max-w-xs flex justify-center gap-6 text-slate-400">
+            <a href="mailto:nareshkumar04094@gmail.com" class="hover:text-primary p-2 flex items-center gap-1 text-xs">
+                <span class="material-symbols-outlined text-sm">mail</span> Email
+            </a>
+            <a id="mobile-gh-link" href="https://github.com/nareshkumar94" target="_blank" class="hover:text-primary font-mono text-xs p-2 flex items-center gap-1">
+                GitHub ↗
+            </a>
+            <a id="mobile-in-link" href="https://www.linkedin.com/in/nareshkumar94" target="_blank" class="hover:text-primary font-mono text-xs p-2 flex items-center gap-1">
+                LinkedIn ↗
+            </a>
+        </div>
+    </div>
+</div>
+
+<main class="max-w-[1240px] mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16 space-y-16 sm:space-y-24 md:space-y-28 w-full overflow-hidden">
+
+    <!-- HERO SECTION -->
+    <section class="fade-in relative pt-2 sm:pt-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-[11px] sm:text-xs font-mono font-medium mb-4 sm:mb-6 max-w-full truncate">
+            <span class="size-1.5 rounded-full bg-primary animate-ping shrink-0"></span>
+            <span class="truncate">Enterprise Backend & GenAI Workflows</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start w-full">
+            <div class="lg:col-span-8 space-y-5 sm:space-y-6">
+                <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.15] break-words">
+                    Engineering resilient backends & <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-amber-300 to-yellow-500">autonomous AI workflows.</span>
+                </h1>
+
+                <p id="hero-summary-text" class="text-sm sm:text-base md:text-lg text-slate-400 leading-relaxed max-w-3xl font-normal">
+                    Python Backend & GenAI Developer with <span class="text-slate-200 font-semibold">2+ years of professional experience</span> building enterprise AI workflows, self-healing ClickHouse ETL pipelines, LangGraph vectorless retrieval, and high-performance FastAPI backends.
+                </p>
+
+                <!-- Key Scale & Metric Badges -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 pt-1 font-mono text-xs">
+                    <div class="bg-surface-dark border border-border-dark p-2.5 sm:p-3.5 rounded">
+                        <span class="text-primary font-bold text-base sm:text-lg block">500K+</span>
+                        <span class="text-slate-400 text-[10px] sm:text-[11px] leading-tight block mt-0.5">Records / ETL Scale</span>
+                    </div>
+                    <div class="bg-surface-dark border border-border-dark p-2.5 sm:p-3.5 rounded">
+                        <span class="text-accent-emerald font-bold text-base sm:text-lg block">Self-Healing</span>
+                        <span class="text-slate-400 text-[10px] sm:text-[11px] leading-tight block mt-0.5">Schema-Drift Engine</span>
+                    </div>
+                    <div class="bg-surface-dark border border-border-dark p-2.5 sm:p-3.5 rounded">
+                        <span class="text-accent-blue font-bold text-base sm:text-lg block">LangGraph</span>
+                        <span class="text-slate-400 text-[10px] sm:text-[11px] leading-tight block mt-0.5">Vectorless RAG</span>
+                    </div>
+                    <div class="bg-surface-dark border border-border-dark p-2.5 sm:p-3.5 rounded">
+                        <span class="text-amber-400 font-bold text-base sm:text-lg block">442 SKUs</span>
+                        <span class="text-slate-400 text-[10px] sm:text-[11px] leading-tight block mt-0.5">Constraint Solver</span>
+                    </div>
+                </div>
+
+                <!-- Call to action row -->
+                <div class="flex flex-wrap items-center gap-3 pt-2">
+                    <a href="#systems" class="bg-primary hover:bg-primary-hover text-background-dark font-mono font-bold text-xs uppercase tracking-wider px-5 py-3 rounded transition-all flex items-center gap-1.5 shadow-md">
+                        <span>Inspect Systems</span>
+                        <span class="material-symbols-outlined text-sm">arrow_downward</span>
+                    </a>
+                    <a href="#telemetry" class="border border-border-light hover:border-primary bg-surface-dark text-slate-300 hover:text-white font-mono text-xs px-4 py-3 rounded transition-all flex items-center gap-1.5">
+                        <span class="material-symbols-outlined text-sm text-primary">terminal</span>
+                        <span>Replay Telemetry</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Terminal Diagnostic Box (Mobile-safe breakages) -->
+            <div class="lg:col-span-4 bg-surface-dark border border-border-dark rounded-lg p-4 sm:p-5 font-mono text-xs shadow-2xl relative w-full overflow-hidden">
+                <div class="flex items-center justify-between pb-2.5 mb-2.5 border-b border-border-dark text-slate-500 text-[11px]">
+                    <div class="flex items-center gap-1.5">
+                        <span class="size-2 rounded-full bg-red-500/80 inline-block"></span>
+                        <span class="size-2 rounded-full bg-yellow-500/80 inline-block"></span>
+                        <span class="size-2 rounded-full bg-green-500/80 inline-block"></span>
+                    </div>
+                    <span>naresh@prod-node:~$</span>
+                </div>
+                <div class="space-y-2 text-slate-300 text-[11px] leading-relaxed break-words">
+                    <p class="text-slate-500"># System Identity & Diagnostics</p>
+                    <p><span class="text-primary">$</span> whoami</p>
+                    <p class="text-slate-400 pl-2">"Python Backend & GenAI Engineer"</p>
+                    
+                    <p><span class="text-primary">$</span> cat /etc/core-specialties</p>
+                    <p class="text-accent-emerald pl-2">> LangGraph & Vectorless RAG</p>
+                    <p class="text-accent-emerald pl-2">> Resilient ClickHouse OLAP</p>
+                    <p class="text-accent-emerald pl-2">> Decision Engines & Constraints</p>
+                    
+                    <p><span class="text-primary">$</span> curl -s /healthz</p>
+                    <p class="text-slate-400 pl-2 break-all">{ "status": "active", "availability": "open" }</p>
+                </div>
+                <div class="mt-3 pt-2.5 border-t border-border-dark/60 flex items-center justify-between text-[10px] sm:text-[11px] text-slate-500">
+                    <span class="text-slate-400 font-semibold truncate">High-Throughput Backend</span>
+                    <span class="text-primary shrink-0 ml-2">2+ Years Exp</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 01: FEATURED ENTERPRISE SYSTEMS -->
+    <section class="space-y-8 sm:space-y-10 fade-in scroll-mt-20 sm:scroll-mt-24 w-full" id="systems">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-3 border-b border-border-dark pb-5">
+            <div>
+                <span class="text-primary font-mono text-xs tracking-widest block uppercase font-bold mb-1">01 // PRODUCTION ARCHITECTURE</span>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">Enterprise AI & Backend Systems</h2>
+            </div>
+            <p class="text-xs font-mono text-slate-500 max-w-md">
+                Production-grade data pipelines and autonomous GenAI systems built to handle enterprise scale, schema drift, and complex decision constraints.
+            </p>
+        </div>
+
+        <div id="systems-container" class="grid grid-cols-1 gap-6 sm:gap-8 w-full">
+            <!-- Dynamically populated from portfolio-data.json -->
+        </div>
+    </section>
+
+    <!-- SECTION 02: LIVE AGENT & SYSTEM TELEMETRY -->
+    <section class="space-y-6 sm:space-y-8 fade-in scroll-mt-20 sm:scroll-mt-24 w-full" id="telemetry">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-3 border-b border-border-dark pb-5">
+            <div>
+                <span class="text-primary font-mono text-xs tracking-widest block uppercase font-bold mb-1">02 // LIVE AGENT & SYSTEM TELEMETRY</span>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">Real-Time Architecture Trace Replay</h2>
+            </div>
+            <p class="text-xs font-mono text-slate-500 max-w-md">
+                Inspect simulated execution streams of autonomous agent decision loops, vectorless retrieval, and self-healing data recovery.
+            </p>
+        </div>
+
+        <div class="bg-surface-dark border border-border-dark rounded-lg p-4 sm:p-6 md:p-8 space-y-4 sm:space-y-6 w-full overflow-hidden">
+            <!-- Mobile-friendly Control Trace Buttons -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div class="grid grid-cols-1 sm:flex sm:flex-wrap gap-2 w-full sm:w-auto">
+                    <button id="btn-trace-agent" onclick="startTelemetryTrace('agent')" class="bg-primary text-black font-mono font-bold text-[11px] sm:text-xs px-3 sm:px-4 py-2 rounded transition-all flex items-center justify-center sm:justify-start gap-1 shadow-md w-full sm:w-auto">
+                        <span class="material-symbols-outlined text-sm">play_arrow</span>
+                        <span class="truncate">Trace 1: Product Recommendation Agent</span>
+                    </button>
+                    <button id="btn-trace-sync" onclick="startTelemetryTrace('sync')" class="border border-border-light bg-surface-elevated hover:border-primary text-slate-300 font-mono text-[11px] sm:text-xs px-3 sm:px-4 py-2 rounded transition-all flex items-center justify-center sm:justify-start gap-1 w-full sm:w-auto">
+                        <span class="material-symbols-outlined text-sm text-accent-emerald">play_arrow</span>
+                        <span class="truncate">Trace 2: Salesforce to ClickHouse Sync</span>
+                    </button>
+                    <button id="btn-trace-rag" onclick="startTelemetryTrace('rag')" class="border border-border-light bg-surface-elevated hover:border-primary text-slate-300 font-mono text-[11px] sm:text-xs px-3 sm:px-4 py-2 rounded transition-all flex items-center justify-center sm:justify-start gap-1 w-full sm:w-auto">
+                        <span class="material-symbols-outlined text-sm text-cyan-400">play_arrow</span>
+                        <span class="truncate">Trace 3: Vectorless RAG</span>
+                    </button>
+                </div>
+                <div class="flex justify-end">
+                    <button onclick="clearTelemetryTerminal()" class="text-slate-500 hover:text-slate-300 font-mono text-xs px-2.5 py-1.5 rounded transition-colors flex items-center gap-1 border border-border-dark">
+                        <span class="material-symbols-outlined text-sm">refresh</span>
+                        <span>Reset Log</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Terminal Output Window (Mobile responsive log wrapping) -->
+            <div class="bg-background-dark border border-border-dark rounded p-3 sm:p-4 font-mono text-xs shadow-inner w-full">
+                <div class="flex items-center justify-between pb-2.5 border-b border-border-dark/80 text-[10px] sm:text-[11px] text-slate-500 mb-2.5">
+                    <div class="flex items-center gap-1.5 truncate">
+                        <span class="size-2 rounded-full bg-accent-emerald animate-pulse shrink-0"></span>
+                        <span id="telemetry-session-name" class="font-semibold text-slate-300 truncate">SESSION: langgraph-decision-trace</span>
+                    </div>
+                    <span id="telemetry-timer" class="text-slate-400 shrink-0 ml-2">ACTIVE</span>
+                </div>
+                
+                <div id="telemetry-terminal-logs" class="space-y-2 h-64 sm:h-72 overflow-y-auto terminal-scroll text-[11px] leading-relaxed text-slate-300 pr-1">
+                    <!-- Logs stream in dynamically here -->
+                </div>
+            </div>
+            
+            <div class="flex flex-wrap items-center justify-between text-[10px] sm:text-[11px] font-mono text-slate-500 pt-2 border-t border-border-dark/60 gap-2">
+                <span>Deterministic Execution: Zero Hallucinated Configurations</span>
+                <span class="text-primary truncate">LangGraph • ChromaDB • FastAPI • ClickHouse</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 03: PROFESSIONAL EXPERIENCE -->
+    <section class="space-y-8 sm:space-y-10 fade-in scroll-mt-20 sm:scroll-mt-24 w-full" id="experience">
+        <div class="border-b border-border-dark pb-5">
+            <span class="text-primary font-mono text-xs tracking-widest block uppercase font-bold mb-1">03 // TRACK RECORD</span>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">Professional Experience</h2>
+        </div>
+
+        <div id="experience-container" class="relative pl-5 sm:pl-7 border-l-2 border-border-dark space-y-10 max-w-4xl ml-2">
+            <!-- Experience dynamically injected from portfolio-data.json -->
+        </div>
+    </section>
+
+    <!-- SECTION 04: CERTIFICATES & CREDENTIALS -->
+    <section class="space-y-8 sm:space-y-10 fade-in scroll-mt-20 sm:scroll-mt-24 w-full" id="certificates">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-3 border-b border-border-dark pb-5">
+            <div>
+                <span class="text-primary font-mono text-xs tracking-widest block uppercase font-bold mb-1">04 // VERIFIED CREDENTIALS</span>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">Certifications & Learning</h2>
+            </div>
+            <p class="text-xs font-mono text-slate-500 max-w-md">
+                Formal specializations in LLM orchestration, prompt engineering, vector stores, and neural architectures.
+            </p>
+        </div>
+
+        <div id="certificates-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 w-full">
+            <!-- Certificates dynamically injected from portfolio-data.json -->
+        </div>
+    </section>
+
+    <!-- SECTION 05: TECHNICAL ECOSYSTEM -->
+    <section class="space-y-8 sm:space-y-10 fade-in scroll-mt-20 sm:scroll-mt-24 w-full" id="ecosystem">
+        <div class="border-b border-border-dark pb-5">
+            <span class="text-primary font-mono text-xs tracking-widest block uppercase font-bold mb-1">05 // TECHNICAL TOOLING</span>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">Technical Ecosystem</h2>
+        </div>
+
+        <div id="skills-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 w-full">
+            <!-- Skills categories dynamically injected from portfolio-data.json -->
+        </div>
+    </section>
+
+    <!-- SECTION 06: EDUCATION -->
+    <section class="space-y-8 sm:space-y-10 fade-in scroll-mt-20 sm:scroll-mt-24 w-full" id="education">
+        <div class="border-b border-border-dark pb-5">
+            <span class="text-primary font-mono text-xs tracking-widest block uppercase font-bold mb-1">06 // FOUNDATION</span>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight">Education & Degree</h2>
+        </div>
+
+        <div id="education-container" class="bg-surface-dark border border-border-dark p-5 sm:p-6 md:p-8 rounded-lg max-w-3xl flex flex-col sm:flex-row sm:items-center justify-between gap-5 w-full">
+            <!-- Education dynamically injected from portfolio-data.json -->
+        </div>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="border-t border-border-dark bg-surface-dark/60 py-10 sm:py-14 mt-16 w-full">
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 sm:gap-8">
+        <div class="space-y-2">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-xl sm:text-2xl">terminal</span>
+                <span id="footer-brand-name" class="font-mono font-bold text-white text-base">Naresh<span class="text-primary">.dev</span></span>
+            </div>
+            <p class="text-slate-500 text-xs font-mono max-w-sm">
+                Engineered for clarity, scale, and high resiliency. Self-contained architecture deployable to edge static hosting.
+            </p>
+        </div>
+
+        <div class="flex flex-wrap gap-6 sm:gap-8 font-mono text-xs">
+            <div class="space-y-2">
+                <span class="text-slate-500 uppercase tracking-wider block text-[10px] font-bold">Direct Contact</span>
+                <div class="flex flex-col gap-1.5 text-slate-400">
+                    <div class="flex items-center gap-2">
+                        <a id="footer-email-link" href="mailto:nareshkumar04094@gmail.com" class="hover:text-primary transition-colors">nareshkumar04094@gmail.com</a>
+                        <button onclick="copyEmailToClipboard(event)" class="text-slate-500 hover:text-primary p-0.5 focus:outline-none" title="Copy to clipboard">
+                            <span class="material-symbols-outlined text-xs">content_copy</span>
+                        </button>
+                        <span id="footer-copy-tooltip" class="text-[10px] text-accent-emerald font-bold opacity-0 transition-opacity">Copied!</span>
+                    </div>
+                    <a id="footer-linkedin-link" href="https://www.linkedin.com/in/nareshkumar94" target="_blank" class="hover:text-primary transition-colors">LinkedIn Profile</a>
+                    <a id="footer-github-link" href="https://github.com/nareshkumar94" target="_blank" class="hover:text-primary transition-colors">GitHub Repositories</a>
+                </div>
+            </div>
+            <div class="space-y-2">
+                <span class="text-slate-500 uppercase tracking-wider block text-[10px] font-bold">Deployment</span>
+                <div class="flex flex-col gap-1 text-slate-400 text-xs">
+                    <span class="text-accent-emerald">● Edge CDN Deployed</span>
+                    <span>Zero Build Dependencies</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="max-w-[1240px] mx-auto px-4 sm:px-6 pt-6 mt-6 border-t border-border-dark/60 flex flex-col sm:flex-row justify-between items-center text-[10px] sm:text-[11px] font-mono text-slate-600 gap-2 text-center sm:text-left">
+        <span id="footer-copyright-text">© 2026 Naresh — Applied Python Backend & GenAI Systems Portfolio</span>
+        <span>Status: Operational</span>
+    </div>
+</footer>
+
+<!-- SCRIPT: CORE LOGIC, DUAL HYDRATION & TELEMETRY STREAMING -->
+<script>
+// Mobile Drawer Controls
+const menuBtn = document.getElementById('menu-btn');
+const closeBtn = document.getElementById('close-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileLinks = document.querySelectorAll('.mobile-link');
+
+function openMobileMenu() {
+    mobileMenu.classList.remove('-translate-y-full', 'pointer-events-none');
+    document.body.style.overflow = 'hidden';
+}
+function closeMobileMenu() {
+    mobileMenu.classList.add('-translate-y-full', 'pointer-events-none');
+    document.body.style.overflow = '';
+}
+menuBtn.addEventListener('click', openMobileMenu);
+closeBtn.addEventListener('click', closeMobileMenu);
+mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+
+// Scroll Reveal Observer
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.05 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Email Copy Helper
+function copyEmailToClipboard(event) {
+    if (event) event.preventDefault();
+    const email = window.PORTFOLIO_EMAIL || "nareshkumar04094@gmail.com";
+    navigator.clipboard.writeText(email).then(() => {
+        const tooltip = document.getElementById('footer-copy-tooltip');
+        if (tooltip) {
+            tooltip.classList.remove('opacity-0');
+            setTimeout(() => tooltip.classList.add('opacity-0'), 2000);
+        }
+    });
+}
+
+// ==========================================
+// TELEMETRY LOG STREAM REPLAYER ENGINE
+// ==========================================
+let telemetryInterval = null;
+
+const TELEMETRY_TRACES = {
+    agent: [
+        { time: "14:32:10.124", level: "INFO", source: "fastapi", msg: "POST /chat request_received thread_id=th_8f21 status=200" },
+        { time: "14:32:10.131", level: "INFO", source: "langgraph_router", msg: "intent_classified intent=product_recommendation latency_ms=7" },
+        { time: "14:32:10.148", level: "INFO", source: "product_retriever", msg: "product_dna_loaded candidates=442 source=chroma_db latency_ms=17" },
+        { time: "14:32:10.176", level: "INFO", source: "salesforce_pricing", msg: "pricing_data_resolved products_checked=42 latency_ms=28" },
+        { time: "14:32:10.193", level: "INFO", source: "constraint_engine", msg: "feasibility_check quantity=500 budget=validated deadline=validated latency_ms=17" },
+        { time: "14:32:10.211", level: "INFO", source: "product_ranker", msg: "scoring_applied dimensions=3 eligible=12 excluded=30 latency_ms=18" },
+        { time: "14:32:10.219", level: "OK", source: "evidence_guard", msg: "product_facts_validated unsupported_claims=0 latency_ms=8" },
+        { time: "14:32:10.247", level: "INFO", source: "decision_trace", msg: "decision_recorded recommendations=2 latency_ms=28" },
+        { time: "14:32:10.391", level: "INFO", source: "response_generator", msg: "consultative_response_generated model=gpt-4o-mini latency_ms=144" },
+        { time: "14:32:10.395", level: "DONE", source: "fastapi", msg: "request_completed status=200 total_latency_ms=271" }
+    ],
+    sync: [
+        { time: "14:35:00.002", level: "INFO", source: "apscheduler", msg: "job_started job=salesforce_incremental_sync" },
+        { time: "14:35:00.019", level: "INFO", source: "salesforce_client", msg: "connection_established org=enterprise-prod-01 latency_ms=17" },
+        { time: "14:35:00.084", level: "INFO", source: "salesforce_extractor", msg: "incremental_fetch_complete objects=11 records=1247 latency_ms=65" },
+        { time: "14:35:00.107", level: "INFO", source: "schema_validator", msg: "schema_comparison_complete target=clickhouse drift_detected=true" },
+        { time: "14:35:00.121", level: "WARN", source: "schema_healer", msg: "new_field_detected object=Opportunity field=Custom_Field__c action=shadow_staging_init" },
+        { time: "14:35:00.145", level: "INFO", source: "ddl_generator", msg: "clickhouse_ddl_compiled target=opportunity_shadow_v2 type_mapping=validated" },
+        { time: "14:35:00.170", level: "OK", source: "clickhouse_olap", msg: "shadow_table_created table=opportunity_shadow_v2 latency_ms=25" },
+        { time: "14:35:00.238", level: "INFO", source: "salesforce_extractor", msg: "full_backfill_complete records=1247 rejected=0 latency_ms=68" },
+        { time: "14:35:00.312", level: "OK", source: "clickhouse_olap", msg: "atomic_swap_applied action=EXCHANGE_TABLES latency_ms=14" },
+        { time: "14:35:00.320", level: "INFO", source: "table_cleaner", msg: "shadow_teardown_complete deprecated=opportunity_old" },
+        { time: "14:35:00.329", level: "INFO", source: "sync_audit", msg: "checkpoint_updated status=success" },
+        { time: "14:35:00.331", level: "DONE", source: "apscheduler", msg: "job_completed status=success total_latency_ms=329" }
+    ],
+    rag: [
+        { time: "14:38:12.010", level: "INFO", source: "query_handler", msg: "Received schema query: 'Resolve foreign key relationship for OrderItem Custom Fields'" },
+        { time: "14:38:12.018", level: "INFO", source: "langgraph_router", msg: "Routing to Vectorless RAG Agent (Document Hierarchy Parser)..." },
+        { time: "14:38:12.054", level: "INFO", source: "page_index", msg: "Traversing customized PageIndex tree index across enterprise PDF/Word specification schemas..." },
+        { time: "14:38:12.082", level: "OK", source: "page_index", msg: "Deterministic branch match: Section 'Salesforce Object Relationships / OrderItem' (0 hallucinations)." },
+        { time: "14:38:12.096", level: "INFO", source: "context_grounding", msg: "Injecting exact metadata context: 4 relationship constraints, 12 field definitions." },
+        { time: "14:38:12.180", level: "DONE", source: "langgraph_llm", msg: "Returned grounded technical specification output in 142ms. Zero external API fees." }
+    ]
+};
+
+function clearTelemetryTerminal() {
+    if (telemetryInterval) clearInterval(telemetryInterval);
+    const terminal = document.getElementById('telemetry-terminal-logs');
+    terminal.innerHTML = '<p class="text-slate-500">// Telemetry terminal cleared. Click a trace button above to replay.</p>';
+}
+
+function startTelemetryTrace(type) {
+    if (telemetryInterval) clearInterval(telemetryInterval);
+    
+    const terminal = document.getElementById('telemetry-terminal-logs');
+    terminal.innerHTML = '';
+    
+    const btnAgent = document.getElementById('btn-trace-agent');
+    const btnSync = document.getElementById('btn-trace-sync');
+    const btnRag = document.getElementById('btn-trace-rag');
+    const sessionName = document.getElementById('telemetry-session-name');
+
+    const defaultClass = "border border-border-light bg-surface-elevated hover:border-primary text-slate-300 font-mono text-[11px] sm:text-xs px-3 sm:px-4 py-2 rounded transition-all flex items-center justify-center sm:justify-start gap-1 w-full sm:w-auto";
+    const activeClass = "bg-primary text-black font-mono font-bold text-[11px] sm:text-xs px-3 sm:px-4 py-2 rounded transition-all flex items-center justify-center sm:justify-start gap-1 shadow-md w-full sm:w-auto";
+
+    btnAgent.className = defaultClass;
+    btnSync.className = defaultClass;
+    btnRag.className = defaultClass;
+
+    if (type === 'agent') {
+        btnAgent.className = activeClass;
+        sessionName.textContent = "SESSION: recommendation-agent-workflow";
+    } else if (type === 'sync') {
+        btnSync.className = activeClass;
+        sessionName.textContent = "SESSION: salesforce-clickhouse-sync";
+    } else {
+        btnRag.className = activeClass;
+        sessionName.textContent = "SESSION: vectorless-rag-trace";
+    }
+
+    const lines = TELEMETRY_TRACES[type];
+    let index = 0;
+
+    function appendNextLog() {
+        if (index >= lines.length) {
+            clearInterval(telemetryInterval);
+            const doneLine = document.createElement('div');
+            doneLine.className = "text-slate-500 pt-2 border-t border-border-dark/60 text-[10px]";
+            doneLine.textContent = `// Trace execution completed in ${lines.length * 320}ms. All assertions passed.`;
+            terminal.appendChild(doneLine);
+            terminal.scrollTop = terminal.scrollHeight;
+            return;
+        }
+
+        const log = lines[index];
+        const timestamp = log.time || new Date().toTimeString().split(' ')[0];
+
+        let badgeClass = "text-slate-400 bg-slate-800";
+        if (log.level === 'WARN') badgeClass = "text-amber-300 bg-amber-950/60 border border-amber-600/40";
+        if (log.level === 'OK') badgeClass = "text-accent-emerald bg-emerald-950/60 border border-emerald-600/40";
+        if (log.level === 'DONE') badgeClass = "text-primary bg-amber-900/40 border border-primary/40 font-bold";
+
+        // Mobile responsive log layout: stacks cleanly on small screens, linear on desktop
+        const logElement = document.createElement('div');
+        logElement.className = "flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-2.5 font-mono text-[11px] leading-relaxed pb-1.5 sm:pb-0 border-b border-border-dark/30 sm:border-0";
+        logElement.innerHTML = `
+            <div class="flex items-center gap-1.5 shrink-0 text-[10px]">
+                <span class="text-slate-600">[${timestamp}]</span>
+                <span class="px-1 py-0.2 rounded ${badgeClass}">${log.level}</span>
+                <span class="text-cyan-400">[${log.source}]</span>
+            </div>
+            <span class="text-slate-200 break-words pl-1 sm:pl-0">${log.msg}</span>
+        `;
+        terminal.appendChild(logElement);
+        terminal.scrollTop = terminal.scrollHeight;
+        index++;
+    }
+
+    appendNextLog();
+    telemetryInterval = setInterval(appendNextLog, 340);
+}
+
+
+// ==========================================
+// DUAL HYDRATION & DOM RENDERING ENGINE
+// ==========================================
+
+function renderSystems(systems) {
+    const container = document.getElementById('systems-container');
+    if (!container || !systems) return;
+
+    container.innerHTML = systems.map(system => `
+        <div class="bg-surface-dark border border-border-dark hover:border-primary/50 transition-all rounded-lg p-5 sm:p-7 md:p-9 space-y-5 sm:space-y-6 w-full overflow-hidden">
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                <div class="flex items-start gap-3">
+                    <div class="size-10 sm:size-11 rounded bg-primary/10 border border-primary/30 flex items-center justify-center text-primary shrink-0 mt-0.5">
+                        <span class="material-symbols-outlined text-xl sm:text-2xl">${system.icon || 'hub'}</span>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-wider text-primary block leading-tight">${system.subtitle || 'PRODUCTION SYSTEM'}</span>
+                        <h3 class="text-lg sm:text-2xl font-bold text-white tracking-tight leading-snug">${system.title}</h3>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-1 sm:gap-1.5 pt-1 sm:pt-0">
+                    ${system.technologies.map(tech => `
+                        <span class="text-[10px] font-mono px-2 py-0.5 sm:px-2.5 sm:py-1 rounded bg-surface-elevated border border-border-dark text-slate-300">${tech}</span>
+                    `).join('')}
+                </div>
+            </div>
+
+            <p class="text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed font-normal">
+                ${system.description}
+            </p>
+
+            ${system.metrics ? `
+                <div class="flex flex-wrap gap-2 pt-1">
+                    ${system.metrics.map(metric => `
+                        <span class="inline-flex items-center gap-1 text-[11px] sm:text-xs font-mono px-2.5 py-1 rounded bg-background-dark border border-border-dark text-amber-300">
+                            <span class="text-primary">⚡</span> ${metric}
+                        </span>
+                    `).join('')}
+                </div>
+            ` : ''}
+
+            ${system.architecturalDecisions ? `
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+                    ${system.architecturalDecisions.map(dec => `
+                        <div class="bg-background-dark/70 border border-border-dark p-3 sm:p-4 rounded space-y-1">
+                            <span class="text-[11px] sm:text-xs font-mono font-bold text-primary block">${dec.title}</span>
+                            <p class="text-[11px] sm:text-xs text-slate-400 leading-normal">${dec.detail}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            ` : ''}
+        </div>
+    `).join('');
+}
+
+function renderExperience(experiences) {
+    const container = document.getElementById('experience-container');
+    if (!container || !experiences) return;
+
+    container.innerHTML = experiences.map(exp => `
+        <div class="relative space-y-3">
+            <!-- Perfectly centered timeline dot on the 2px border -->
+            <div class="absolute -left-[29px] sm:-left-[37px] top-1 size-3.5 sm:size-4 rounded-full bg-background-dark border-2 border-primary flex items-center justify-center">
+                <span class="size-1 sm:size-1.5 rounded-full bg-primary"></span>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2">
+                <div>
+                    <h3 class="text-base sm:text-xl font-bold text-white">${exp.position}</h3>
+                    <p class="text-xs sm:text-sm font-mono text-primary font-semibold">${exp.company}</p>
+                </div>
+                <span class="text-[10px] sm:text-xs font-mono px-2.5 py-0.5 sm:py-1 bg-surface-dark border border-primary/30 text-primary rounded self-start sm:self-auto">
+                    ${exp.period}
+                </span>
+            </div>
+
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                ${exp.description}
+            </p>
+        </div>
+    `).join('');
+}
+
+function renderCertificates(certs) {
+    const container = document.getElementById('certificates-container');
+    if (!container || !certs) return;
+
+    container.innerHTML = certs.map(cert => `
+        <div class="bg-surface-dark border border-border-dark hover:border-primary/50 transition-all rounded-lg p-5 sm:p-6 flex flex-col justify-between space-y-4 w-full">
+            <div class="space-y-2.5">
+                <div class="flex items-center justify-between">
+                    <span class="material-symbols-outlined text-primary text-xl sm:text-2xl">${cert.icon || 'verified'}</span>
+                    <span class="text-[9px] sm:text-[10px] font-mono text-slate-500 uppercase tracking-widest">${cert.issuer.split('•')[0].trim()}</span>
+                </div>
+                <h3 class="text-sm sm:text-base font-bold text-white leading-snug">${cert.title}</h3>
+                <p class="text-xs text-slate-400 leading-relaxed font-light">${cert.description}</p>
+            </div>
+            <a href="${cert.url}" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1 text-xs font-mono text-primary hover:text-primary-hover font-semibold transition-colors pt-2 border-t border-border-dark/60">
+                <span>Verify Credential</span>
+                <span class="material-symbols-outlined text-xs">open_in_new</span>
+            </a>
+        </div>
+    `).join('');
+}
+
+function renderSkills(skills) {
+    const container = document.getElementById('skills-container');
+    if (!container || !skills) return;
+
+    const categories = [
+        { key: 'backend', title: 'Backend & Core', icon: 'dns', color: 'text-primary' },
+        { key: 'genai', title: 'GenAI & Agents', icon: 'psychology', color: 'text-accent-emerald' },
+        { key: 'data_platforms', title: 'Data Platforms', icon: 'database', color: 'text-cyan-400' },
+        { key: 'devops', title: 'DevOps & Infra', icon: 'terminal', color: 'text-amber-400' }
+    ];
+
+    container.innerHTML = categories.map(cat => {
+        const items = skills[cat.key] || [];
+        return `
+            <div class="bg-surface-dark border border-border-dark p-4 sm:p-6 rounded-lg space-y-3 sm:space-y-4 w-full">
+                <div class="flex items-center gap-2 ${cat.color}">
+                    <span class="material-symbols-outlined text-lg sm:text-xl">${cat.icon}</span>
+                    <h3 class="font-mono text-xs font-bold uppercase tracking-wider text-white">${cat.title}</h3>
+                </div>
+                <ul class="space-y-1.5 sm:space-y-2 text-xs font-mono text-slate-300">
+                    ${items.map(item => `
+                        <li class="flex items-center justify-between p-2 rounded bg-background-dark border border-border-dark gap-2">
+                            <span class="truncate">${item.name}</span>
+                            ${item.icon.includes('<svg') ? `
+                                <span class="size-4 inline-flex items-center justify-center shrink-0">${item.icon}</span>
+                            ` : `
+                                <span class="material-symbols-outlined text-sm text-slate-500 shrink-0">${item.icon}</span>
+                            `}
+                        </li>
+                    `).join('')}
+                </ul>
+            </div>
+        `;
+    }).join('');
+}
+
+function renderEducation(edu) {
+    const container = document.getElementById('education-container');
+    if (!container || !edu) return;
+
+    container.innerHTML = `
+        <div class="space-y-1.5">
+            <span class="text-xs font-mono text-primary font-semibold">${edu.period || '2019 — 2023'}</span>
+            <h3 class="text-base sm:text-xl font-bold text-white leading-snug">${edu.degree}</h3>
+            <p class="text-xs sm:text-sm text-slate-400">${edu.institution}</p>
+        </div>
+        <div class="px-4 py-2.5 sm:px-5 sm:py-3 rounded bg-background-dark border border-border-dark font-mono text-center shrink-0 self-start sm:self-auto mt-2 sm:mt-0">
+            <span class="text-[10px] text-slate-500 block">FINAL CGPA</span>
+            <span class="text-base sm:text-lg font-bold text-accent-emerald">${edu.grade.includes(':') ? edu.grade.split(':')[1].split('(')[0].trim() : (edu.grade || '8.51 / 10')}</span>
+            <span class="text-[9px] sm:text-[10px] text-slate-400 block">${edu.grade.includes('(') ? edu.grade.substring(edu.grade.indexOf('(')) : '(85.1%)'}</span>
+        </div>
+    `;
+}
+
+// Application Initialization
+async function initPortfolio() {
+    let data = null;
+
+    try {
+        const response = await fetch('./portfolio-data.json');
+        if (response.ok) {
+            data = await response.json();
+        }
+    } catch (e) {
+        console.warn('Local file or network constraint; fallback to embedded data model.');
+    }
+
+    if (!data) {
+        // Embedded Full Fallback ensures 100% offline & local file:// zero-CORS resilience
+        data = {
+            personalInfo: {
+                name: "Naresh",
+                fullName: "Nareshkumar",
+                brandName: "Naresh.dev",
+                terminalUser: "naresh",
+                title: "Python Backend Developer | GenAI Developer",
+                tagline: "Python Backend & GenAI Systems Developer",
+                summary: "Python Backend & GenAI Developer with 2+ years of professional experience building enterprise AI workflows, self-healing data pipelines, and scalable microservices. Specialized in ClickHouse OLAP architectures, LangGraph vectorless retrieval, multi-attribute decision engines, and resilient FastAPI backends.",
+                contactEmail: "nareshkumar04094@gmail.com",
+                github: "https://github.com/nareshkumar94",
+                linkedin: "https://www.linkedin.com/in/nareshkumar94",
+                resumeUrl: "Nareshkumar_Resume.pdf",
+                location: "Chennai, India"
+            },
+            featuredSystems: [
+                {
+                    id: "self-healing-pipeline",
+                    title: "Self-Healing Data Pipeline & AI Reporting Agent",
+                    subtitle: "Enterprise Salesforce-to-ClickHouse ETL with Automated Schema-Drift Recovery",
+                    icon: "auto_graph",
+                    description: "Engineered an incremental Salesforce-to-ClickHouse ETL pipeline synchronizing 11 core enterprise objects (~10K records per sync, 500K historical capacity) for sub-second analytical rollups. Engineered an automated schema-drift self-healing engine that introspects Salesforce metadata, generates ClickHouse DDL, populates an isolated shadow staging table, and performs an atomic zero-downtime table swap (EXCHANGE TABLES) with automated rollback. Developed a LangGraph-driven vectorless RAG workflow with customized open-source PageIndex to process complex PDF/Word schemas without external API fees.",
+                    metrics: [
+                        "500K Records Capacity",
+                        "11 Salesforce Objects",
+                        "Zero API Cost (Self-hosted PageIndex)"
+                    ],
+                    technologies: ["Python", "FastAPI", "ClickHouse", "LangGraph", "Salesforce API", "APScheduler"],
+                    architecturalDecisions: [
+                        {
+                            title: "Why ClickHouse Columnar OLAP?",
+                            detail: "Delivers sub-second analytical aggregations and multi-dimensional rollups across wide, sparse custom-field schemas, vastly outperforming row-oriented stores."
+                        },
+                        {
+                            title: "Why Shadow Table Swap (EXCHANGE TABLES)?",
+                            detail: "In-place schema mutations on active analytical tables can induce locks. Populating an isolated shadow table and executing an atomic EXCHANGE TABLES guarantees zero downtime and zero query disruption during schema drift."
+                        },
+                        {
+                            title: "Why Vectorless RAG?",
+                            detail: "Vector similarity search fails on exact schema relationships and hierarchical business rules. Custom PageIndex tree indexes provide 100% deterministic retrieval."
+                        }
+                    ]
+                },
+                {
+                    id: "b2b-product-recommender",
+                    title: "B2B Product Recommendation & Decision Engine",
+                    subtitle: "Multi-Stage Constraint Solver & RAG Catalog Ingestion for 442 SKUs",
+                    icon: "psychology",
+                    description: "Developed the complete backend workflow for an enterprise B2B product recommendation engine covering 442 configurable industrial product SKUs. Built a hybrid pipeline combining ChromaDB vector retrieval for natural-language buyer intent with a multi-stage deterministic decision engine that applies manufacturing feasibility checks, commercial constraints, and scoring dimensions before candidate ranking.",
+                    metrics: [
+                        "442 Industrial Products",
+                        "Multi-Stage Feasibility Solver",
+                        "Hybrid MySQL + Salesforce"
+                    ],
+                    technologies: ["FastAPI", "LangGraph", "LangChain", "OpenAI API", "ChromaDB", "MySQL", "Streamlit"],
+                    architecturalDecisions: [
+                        {
+                            title: "Hybrid Retrieval & Constraint Solver",
+                            detail: "Combined semantic vector search for buyer intent matching with deterministic constraint validation to guarantee zero hallucinated manufacturing configurations across 442 industrial SKUs."
+                        }
+                    ]
+                },
+                {
+                    id: "scheduled-sync-dashboard",
+                    title: "Scheduled Synchronization & Operational KPI Engine",
+                    subtitle: "Multi-Source Incremental ETL & Low-Latency Reporting APIs",
+                    icon: "sync_alt",
+                    description: "Engineered from scratch an incremental synchronization pipeline integrating 9 enterprise data sources (8 Salesforce objects + 1 external DB). Implemented automated cron execution via APScheduler and structured data modeling with SQLAlchemy. Exposed high-throughput REST API endpoints delivering real-time orders, accounts, and operational KPIs to a Next.js executive dashboard.",
+                    metrics: [
+                        "9 Integrated Data Sources",
+                        "Automated Cron Scheduling",
+                        "Low-Latency REST Serving"
+                    ],
+                    technologies: ["Python", "FastAPI", "SQLAlchemy", "APScheduler", "MySQL", "Next.js Consumer"],
+                    architecturalDecisions: [
+                        {
+                            title: "Why Incremental Sync?",
+                            detail: "Drastically reduced database lock times and network egress by computing state differentials and batch-updating only modified records."
+                        }
+                    ]
+                },
+                {
+                    id: "ai-product-visualization",
+                    title: "AI Product Visualization System",
+                    subtitle: "Master-Reference Computer Vision & Generative Customization",
+                    icon: "biotech",
+                    description: "Provided technical guidance and core AI workflow development for an intelligent product visualization system using a master reference model to render customer customizations. Worked with LangChain and Google Gemini API to structure image prompts, validate visual attribute outputs, and ensure reliable feature rendering across code reviews and automated tests.",
+                    metrics: [
+                        "Master-Reference Architecture",
+                        "Google Gemini Integration",
+                        "Automated Prompt Validation"
+                    ],
+                    technologies: ["Python", "LangChain", "Google Gemini API", "FastAPI"]
+                }
+            ],
+            experience: [
+                {
+                    position: "Junior Developer — Backend & GenAI",
+                    company: "Biz Impact Cloud Solutions (BICS)",
+                    period: "AUG 2024 — PRESENT",
+                    description: "Engineered end-to-end data pipelines and autonomous GenAI systems for enterprise business intelligence using FastAPI, LangGraph, ClickHouse, and LangChain. Engineered schema-drift resilience, automated SFTP document workflows, and custom RAG retrieval architectures to eliminate third-party API dependencies. Contributed technical guidance, code reviews, and testing for AI visualization workflows.",
+                    isCurrent: true
+                }
+            ],
+            certificates: [
+                {
+                    id: "langchain-foundation",
+                    title: "Foundation: Introduction to LangChain",
+                    issuer: "DeepLearning.AI • 2024",
+                    icon: "verified_user",
+                    url: "https://academy.langchain.com/certificates/langchain-foundation-ken",
+                    description: "Verified mastery of foundational Large Language Model orchestration, including Prompt Engineering, Memory Management, and Vector Store integrations."
+                },
+                {
+                    id: "langchain-llm",
+                    title: "LangChain for LLM Application Development",
+                    issuer: "DeepLearning.AI • 2024",
+                    icon: "psychology_alt",
+                    url: "https://academy.langchain.com/certificates/llm-application-development-ken",
+                    description: "Advanced implementation of production-grade LangChain components, custom tools, and multi-step reasoning chains."
+                },
+                {
+                    id: "deep-learning",
+                    title: "Deep Learning Specialization",
+                    issuer: "Coursera / DeepLearning.AI • 2024",
+                    icon: "layers",
+                    url: "https://www.coursera.org/account/accomplishments/specialization/deep-learning-ken",
+                    description: "Comprehensive specialization covering Neural Networks, Deep Learning architectures, Optimization algorithms, and Convolutional Models."
+                }
+            ],
+            skills: {
+                backend: [
+                    { name: "Python", icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path fill="#FFD845" d="M49.33 62h29.159C86.606 62 93 55.132 93 46.981V19.183c0-7.912-6.632-13.856-14.555-15.176-5.014-.835-10.195-1.215-15.187-1.191-4.99.023-9.612.448-13.805 1.191C37.098 6.188 35 10.758 35 19.183V30h29v4H23.776c-8.484 0-15.914 5.108-18.237 14.811-2.681 11.12-2.8 17.919 0 29.53C7.614 86.983 12.569 93 21.054 93H31V79.952C31 70.315 39.428 62 49.33 62zm-1.838-39.11c-3.026 0-5.478-2.479-5.478-5.545 0-3.079 2.451-5.581 5.478-5.581 3.015 0 5.479 2.502 5.479 5.581-.001 3.066-2.465 5.545-5.479 5.545zm74.789 25.921C120.183 40.363 116.178 34 107.682 34H97v12.981C97 57.031 88.206 65 78.489 65H49.33C41.342 65 35 72.326 35 80.326v27.8c0 7.91 6.745 12.564 14.462 14.834 9.242 2.717 17.994 3.208 29.051 0C85.862 120.831 93 116.549 93 108.126V97H64v-4h43.682c8.484 0 11.647-5.776 14.599-14.66 3.047-9.145 2.916-17.799 0-29.529zm-41.955 55.606c3.027 0 5.479 2.479 5.479 5.547 0 3.076-2.451 5.579-5.479 5.579-3.015 0-5.478-2.502-5.478-5.579 0-3.068 2.463-5.547 5.478-5.547z"></path></svg>' },
+                    { name: "FastAPI", icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path fill="#049688" d="M61.5 127.5C28.2 127.5 1.1 100.4 1.1 67.1S28.2 6.7 61.5 6.7s60.4 27.1 60.4 60.4-27.1 60.4-60.4 60.4zm0-112.8C32.6 14.7 9.1 38.2 9.1 67.1s23.5 52.4 52.4 52.4 52.4-23.5 52.4-52.4-23.5-52.4-52.4-52.4zm1.5 86.8L37.9 69.4l19.5-2.8L51.3 35l25.1 32.1-19.5 2.8 6.1 31.6z"></path></svg>' },
+                    { name: "SQLAlchemy ORM", icon: "storage" },
+                    { name: "APScheduler", icon: "schedule" },
+                    { name: "REST APIs", icon: "api" },
+                    { name: "Django REST", icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path fill="#0C4B33" d="M59.448 0h20.93v96.88c-10.737 2.04-18.62 2.855-27.181 2.855-25.551-.001-38.87-11.551-38.87-33.705 0-21.338 14.135-35.2 36.015-35.2 3.398 0 5.98.272 9.106 1.087zm0 48.765c-2.446-.815-4.485-1.086-7.067-1.086-10.6 0-16.717 6.523-16.717 17.939 0 11.145 5.845 17.26 16.582 17.26 2.309 0 4.212-.136 7.202-.542z"></path><path fill="#0C4B33" d="M113.672 32.321V80.84c0 16.717-1.224 24.735-4.893 31.666-3.398 6.661-7.883 10.873-17.124 15.494l-19.435-9.241c9.242-4.35 13.726-8.153 16.58-14 2.99-5.979 3.943-12.91 3.943-31.122V32.321zM92.742.111h20.93v21.474h-20.93z"></path></svg>' }
+                ],
+                genai: [
+                    { name: "LangGraph", icon: "hub" },
+                    { name: "LangChain", icon: '<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path fill="#ec9c13" d="M8.13 7.89C3.65 7.89 0 11.53 0 16s3.65 8.11 8.13 8.11h15.74C28.35 24.11 32 20.47 32 16s-3.65-8.11-8.13-8.11H8.13z"></path></svg>' },
+                    { name: "Vectorless RAG", icon: "account_tree" },
+                    { name: "PageIndex (Custom)", icon: "description" },
+                    { name: "ChromaDB", icon: "grid_view" },
+                    { name: "OpenAI & Gemini APIs", icon: "psychology" }
+                ],
+                data_platforms: [
+                    { name: "ClickHouse (OLAP)", icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path fill="#FFCC00" d="M8 16h16v96H8zM32 16h16v96H32zM56 16h16v96H56zM80 16h16v96H80zM104 16h16v96h-16z"></path></svg>' },
+                    { name: "MySQL", icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path fill="#00618A" d="M117.688 98.242c-6.973-.191-12.297.461-16.852 2.379-1.293.547-3.355.559-3.566 2.18.711.746.82 1.859 1.387 2.777 1.086 1.754 2.922 4.113 4.559 5.352 1.789 1.348 3.633 2.793 5.551 3.961 3.414 2.082 7.223 3.27 10.504 5.352 1.938 1.23 3.859 2.777 5.75 4.164.934.684 1.563 1.75 2.773 2.18v-.195c-.637-.812-.801-1.93-1.387-2.777l-2.578-2.578c-2.52-3.344-5.719-6.281-9.117-8.719-2.711-1.949-8.781-4.578-9.91-7.73l-.199-.199c1.922-.219 4.172-.914 5.949-1.391 2.98-.797 5.645-.59 8.719-1.387l4.164-1.187v-.793c-1.555-1.594-2.664-3.707-4.359-5.152-4.441-3.781-9.285-7.555-14.273-10.703-2.766-1.746-6.184-2.883-9.117-4.363-.988-.496-2.719-.758-3.371-1.586-1.539-1.961-2.379-4.449-3.566-6.738-2.488-4.793-4.93-10.023-7.137-15.066-1.504-3.437-2.484-6.828-4.359-9.91-9-14.797-18.687-23.73-33.695-32.508-3.195-1.867-7.039-2.605-11.102-3.57l-6.543-.395c-1.332-.555-2.715-2.184-3.965-2.977C16.977 3.52 4.223-3.312.539 5.672-1.785 11.34 4.016 16.871 6.09 19.746c1.457 2.012 3.32 4.273 4.359 6.539.688 1.492.805 2.984 1.391 4.559 1.438 3.883 2.695 8.109 4.559 11.695.941 1.816 1.98 3.727 3.172 5.352.727.996 1.98 1.438 2.18 2.973-1.227 1.715-1.297 4.375-1.984 6.543-3.098 9.77-1.926 21.91 2.578 29.137 1.383 2.223 4.641 6.98 9.117 5.156 3.918-1.598 3.043-6.539 4.164-10.902.254-.988.098-1.715.594-2.379v.199l3.57 7.133c2.641 4.254 7.324 8.699 11.297 11.699 2.059 1.555 3.68 4.242 6.344 5.152v-.199h-.199c-.516-.805-1.324-1.137-1.98-1.781-1.551-1.523-3.277-3.414-4.559-5.156-3.613-4.902-6.805-10.27-9.711-15.855-1.391-2.668-2.598-5.609-3.77-8.324-.453-1.047-.445-2.633-1.387-3.172-1.281 1.988-3.172 3.598-4.164 5.945-1.582 3.754-1.789 8.336-2.375 13.082-.348.125-.195.039-.398.199-2.762-.668-3.73-3.508-4.758-5.949-2.594-6.164-3.078-16.09-.793-23.191.59-1.836 3.262-7.617 2.18-9.316-.516-1.691-2.219-2.672-3.172-3.965-1.18-1.598-2.355-3.703-3.172-5.551-2.125-4.805-3.113-10.203-5.352-15.062-1.07-2.324-2.875-4.676-4.359-6.738-1.645-2.289-3.484-3.977-4.758-6.742-.453-.984-1.066-2.559-.398-3.566.215-.684.516-.969 1.191-1.191 1.148-.887 4.352.297 5.547.793 3.18 1.32 5.832 2.578 8.527 4.363 1.289.855 2.598 2.512 4.16 2.973h1.785c2.789.641 5.914.195 8.523.988 4.609 1.402 8.738 3.582 12.488 5.949 11.422 7.215 20.766 17.48 27.156 29.734 1.027 1.973 1.473 3.852 2.379 5.945 1.824 4.219 4.125 8.559 5.941 12.688 1.816 4.113 3.582 8.27 6.148 11.695 1.348 1.801 6.551 2.766 8.918 3.766 1.66.699 4.379 1.43 5.949 2.379 3 1.809 5.906 3.965 8.723 5.945 1.402.992 5.73 3.168 5.945 4.957z"></path></svg>' },
+                    { name: "Salesforce CRM", icon: "cloud_sync" },
+                    { name: "Pandas & NumPy", icon: "analytics" },
+                    { name: "XGBoost", icon: "query_stats" }
+                ],
+                devops: [
+                    { name: "Docker", icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path fill="#019BC6" d="M124.8 52.1c-4.3-2.5-10-2.8-14.8-1.4-.6-5.2-4-9.7-8-12.9l-1.6-1.3-1.4 1.6c-2.7 3.1-3.5 8.3-3.1 12.3.3 2.9 1.2 5.9 3 8.3-1.4.8-2.9 1.9-4.3 2.4-2.8 1-5.9 2-8.9 2H79V49H66V24H51v12H26v13H13v14H1.8l-.2 1.5c-.5 6.4.3 12.6 3 18.5l1.1 2.2.1.2c7.9 13.4 21.7 19 36.8 19 29.2 0 53.3-13.1 64.3-40.6 7.4.4 15-1.8 18.6-8.9l.9-1.8-1.6-1zM28 39h10v11H28V39zm13.1 44.2c0 1.7-1.4 3.1-3.1 3.1-1.7 0-3.1-1.4-3.1-3.1 0-1.7 1.4-3.1 3.1-3.1 1.7.1 3.1 1.4 3.1 3.1zM28 52h10v11H28V52zm-13 0h11v11H15V52zm27.7 50.2c-15.8-.1-24.3-5.4-31.3-12.4 2.1.1 4.1.2 5.9.2 1.6 0 3.2 0 4.7-.1 3.9-.2 7.3-.7 10.1-1.5 2.3 5.3 6.5 10.2 14 13.8h-3.4zM51 63H40V52h11v11zm0-13H40V39h11v11zm13 13H53V52h11v11zm0-13H53V39h11v11zm0-13H53V26h11v11zm13 26H66V52h11v11z"></path></svg>' },
+                    { name: "Git & GitHub", icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path fill="#F34F29" d="M124.742 58.378L69.625 3.264c-3.172-3.174-8.32-3.174-11.497 0L46.685 14.71l14.518 14.518c3.375-1.139 7.243-.375 9.932 2.314a9.66 9.66 0 012.293 9.993L87.42 55.529c3.385-1.167 7.292-.413 9.994 2.295 3.78 3.777 3.78 9.9 0 13.679a9.673 9.673 0 01-13.683 0 9.677 9.677 0 01-2.105-10.521L68.578 47.933l-.002 34.341a9.708 9.708 0 012.559 1.828c3.779 3.777 3.779 9.898 0 13.683-3.779 3.777-9.904 3.777-13.679 0-3.778-3.784-4.088-9.905-.311-13.683.934-.933 1.855-1.638 2.855-2.11V47.333c-1-.472-1.92-1.172-2.856-2.111-2.861-2.86-3.396-7.06-1.928-10.576L40.983 20.333 3.229 58.123c-3.175 3.177-3.155 8.325.02 11.5l55.126 55.114c3.173 3.174 8.325 3.174 11.503 0l54.86-54.858c3.175-3.176 3.178-8.327.004-11.501z"></path></svg>' },
+                    { name: "ETL & Incremental Sync", icon: "alt_route" },
+                    { name: "Postman", icon: "mark_email_read" },
+                    { name: "Linux / Bash", icon: "terminal" },
+                    { name: "Streamlit", icon: "web" }
+                ]
+            },
+            education: {
+                degree: "Bachelor of Engineering — Computer Science and Engineering",
+                institution: "Panimalar Institute of Technology, Affiliated to Anna University",
+                period: "2019 — 2023",
+                grade: "CGPA: 8.51 / 10 (85.1%)"
+            }
+        };
+    }
+
+    window.PORTFOLIO_EMAIL = data.personalInfo.contactEmail;
+
+    // Hydrate Header, Hero & Links
+    if (data.personalInfo) {
+        document.title = `${data.personalInfo.name} | ${data.personalInfo.title}`;
+        const navBrand = document.getElementById('nav-brand-name');
+        if (navBrand) navBrand.innerHTML = `${data.personalInfo.name}<span class="text-primary">.dev</span>`;
+        const footerBrand = document.getElementById('footer-brand-name');
+        if (footerBrand) footerBrand.innerHTML = `${data.personalInfo.name}<span class="text-primary">.dev</span>`;
+        
+        const headerContact = document.getElementById('header-contact-link');
+        if (headerContact) headerContact.href = `mailto:${data.personalInfo.contactEmail}`;
+
+        const footerEmail = document.getElementById('footer-email-link');
+        if (footerEmail) {
+            footerEmail.textContent = data.personalInfo.contactEmail;
+            footerEmail.href = `mailto:${data.personalInfo.contactEmail}`;
+        }
+        
+        ['status-github-link', 'footer-github-link', 'mobile-gh-link'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.href = data.personalInfo.github;
+        });
+
+        ['status-linkedin-link', 'footer-linkedin-link', 'mobile-in-link'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.href = data.personalInfo.linkedin;
+        });
+
+        const headerResume = document.getElementById('header-resume-link');
+        if (headerResume && data.personalInfo.resumeUrl) {
+            headerResume.href = data.personalInfo.resumeUrl;
+            if (data.personalInfo.resumeUrl.endsWith('.pdf')) {
+                headerResume.setAttribute('download', 'Nareshkumar_Resume.pdf');
+                headerResume.setAttribute('target', '_blank');
+                headerResume.setAttribute('rel', 'noopener');
+            }
+        }
+
+        const heroSummary = document.getElementById('hero-summary-text');
+        if (heroSummary && data.personalInfo.summary) {
+            heroSummary.textContent = data.personalInfo.summary;
+        }
+
+        const footerCopyright = document.getElementById('footer-copyright-text');
+        if (footerCopyright) {
+            footerCopyright.textContent = `© 2026 ${data.personalInfo.name} (${data.personalInfo.fullName}) — Applied Python Backend & GenAI Systems Portfolio`;
+        }
+    }
+
+    // Render Data Sections
+    if (data.featuredSystems) renderSystems(data.featuredSystems);
+    if (data.experience) renderExperience(data.experience);
+    if (data.certificates) renderCertificates(data.certificates);
+    if (data.skills) renderSkills(data.skills);
+    if (data.education) renderEducation(data.education);
+
+    // Start default Telemetry Stream (Agent trace)
+    startTelemetryTrace('agent');
+}
+
+document.addEventListener('DOMContentLoaded', initPortfolio);
+</script>
+
+</body>
+</html>

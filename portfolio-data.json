@@ -1,0 +1,170 @@
+{
+  "personalInfo": {
+    "name": "Naresh",
+    "fullName": "Nareshkumar",
+    "brandName": "Naresh.dev",
+    "terminalUser": "naresh",
+    "title": "Python Backend Developer | GenAI Developer",
+    "tagline": "Python Backend & GenAI Systems Developer",
+    "summary": "Python Backend & GenAI Developer with 2+ years of professional experience building enterprise AI workflows, self-healing data pipelines, and scalable microservices. Specialized in ClickHouse OLAP architectures, LangGraph vectorless retrieval, multi-attribute decision engines, and resilient FastAPI backends.",
+    "contactEmail": "nareshkumar04094@gmail.com",
+    "github": "https://github.com/nareshkumar94",
+    "linkedin": "https://www.linkedin.com/in/nareshkumar94",
+    "resumeUrl": "Nareshkumar_Resume.pdf",
+    "location": "Chennai, India"
+  },
+  "featuredSystems": [
+    {
+      "id": "self-healing-pipeline",
+      "title": "Self-Healing Data Pipeline & AI Reporting Agent",
+      "subtitle": "Enterprise Salesforce-to-ClickHouse ETL with Automated Schema-Drift Recovery",
+      "icon": "auto_graph",
+      "description": "Engineered an incremental Salesforce-to-ClickHouse ETL pipeline synchronizing 11 core enterprise objects (~10K records per sync, 500K historical capacity) for sub-second analytical rollups. Engineered an automated schema-drift self-healing engine that introspects Salesforce metadata, generates ClickHouse DDL, populates an isolated shadow staging table, and performs an atomic zero-downtime table swap (EXCHANGE TABLES) with automated rollback. Developed a LangGraph-driven vectorless RAG workflow with customized open-source PageIndex to process complex PDF/Word schemas without external API fees.",
+      "metrics": [
+        "500K Records Capacity",
+        "11 Salesforce Objects",
+        "Zero API Cost (Self-hosted PageIndex)"
+      ],
+      "technologies": ["Python", "FastAPI", "ClickHouse", "LangGraph", "Salesforce API", "APScheduler"],
+      "architecturalDecisions": [
+        {
+          "title": "Why ClickHouse Columnar OLAP?",
+          "detail": "Delivers sub-second analytical aggregations and multi-dimensional rollups across wide, sparse custom-field schemas, vastly outperforming row-oriented stores."
+        },
+        {
+          "title": "Why Shadow Table Swap (EXCHANGE TABLES)?",
+          "detail": "In-place schema mutations on active analytical tables can induce locks. Populating an isolated shadow table and executing an atomic EXCHANGE TABLES guarantees zero downtime and zero query disruption during schema drift."
+        },
+        {
+          "title": "Why Vectorless RAG?",
+          "detail": "Vector similarity search fails on exact schema relationships and hierarchical business rules. Custom PageIndex tree indexes provide 100% deterministic retrieval."
+        }
+      ]
+    },
+    {
+      "id": "b2b-product-recommender",
+      "title": "B2B Product Recommendation & Decision Engine",
+      "subtitle": "Multi-Stage Constraint Solver & RAG Catalog Ingestion for 442 SKUs",
+      "icon": "psychology",
+      "description": "Developed the complete backend workflow for an enterprise B2B product recommendation engine covering 442 configurable industrial product SKUs. Built a hybrid pipeline combining ChromaDB vector retrieval for natural-language buyer intent with a multi-stage deterministic decision engine that applies manufacturing feasibility checks, commercial constraints, and scoring dimensions before candidate ranking.",
+      "metrics": [
+        "442 Industrial Products",
+        "Multi-Stage Feasibility Solver",
+        "Hybrid MySQL + Salesforce"
+      ],
+      "technologies": ["FastAPI", "LangGraph", "LangChain", "OpenAI API", "ChromaDB", "MySQL", "Streamlit"],
+      "architecturalDecisions": [
+        {
+          "title": "Hybrid Retrieval & Constraint Solver",
+          "detail": "Combined semantic vector search for buyer intent matching with deterministic constraint validation to guarantee zero hallucinated manufacturing configurations across 442 industrial SKUs."
+        }
+      ]
+    },
+    {
+      "id": "scheduled-sync-dashboard",
+      "title": "Scheduled Synchronization & Operational KPI Engine",
+      "subtitle": "Multi-Source Incremental ETL & Low-Latency Reporting APIs",
+      "icon": "sync_alt",
+      "description": "Engineered from scratch an incremental synchronization pipeline integrating 9 enterprise data sources (8 Salesforce objects + 1 external DB). Implemented automated cron execution via APScheduler and structured data modeling with SQLAlchemy. Exposed high-throughput REST API endpoints delivering real-time orders, accounts, and operational KPIs to a Next.js executive dashboard.",
+      "metrics": [
+        "9 Integrated Data Sources",
+        "Automated Cron Scheduling",
+        "Low-Latency REST Serving"
+      ],
+      "technologies": ["Python", "FastAPI", "SQLAlchemy", "APScheduler", "MySQL", "Next.js Consumer"],
+      "architecturalDecisions": [
+        {
+          "title": "Why Incremental Sync?",
+          "detail": "Drastically reduced database lock times and network egress by computing state differentials and batch-updating only modified records."
+        }
+      ]
+    },
+    {
+      "id": "ai-product-visualization",
+      "title": "AI Product Visualization System",
+      "subtitle": "Master-Reference Computer Vision & Generative Customization",
+      "icon": "biotech",
+      "description": "Provided technical guidance and core AI workflow development for an intelligent product visualization system using a master reference model to render customer customizations. Worked with LangChain and Google Gemini API to structure image prompts, validate visual attribute outputs, and ensure reliable feature rendering across code reviews and automated tests.",
+      "metrics": [
+        "Master-Reference Architecture",
+        "Google Gemini Integration",
+        "Automated Prompt Validation"
+      ],
+      "technologies": ["Python", "LangChain", "Google Gemini API", "FastAPI"]
+    }
+  ],
+  "experience": [
+    {
+      "position": "Junior Developer — Backend & GenAI",
+      "company": "Biz Impact Cloud Solutions (BICS)",
+      "period": "AUG 2024 — PRESENT",
+      "description": "Engineered end-to-end data pipelines and autonomous GenAI systems for enterprise business intelligence using FastAPI, LangGraph, ClickHouse, and LangChain. Engineered schema-drift resilience, automated SFTP document workflows, and custom RAG retrieval architectures to eliminate third-party API dependencies. Contributed technical guidance, code reviews, and testing for AI visualization workflows.",
+      "isCurrent": true
+    }
+  ],
+  "certificates": [
+    {
+      "id": "langchain-foundation",
+      "title": "Foundation: Introduction to LangChain",
+      "issuer": "DeepLearning.AI • 2024",
+      "icon": "verified_user",
+      "url": "https://academy.langchain.com/certificates/langchain-foundation-ken",
+      "description": "Verified mastery of foundational Large Language Model orchestration, including Prompt Engineering, Memory Management, and Vector Store integrations."
+    },
+    {
+      "id": "langchain-llm",
+      "title": "LangChain for LLM Application Development",
+      "issuer": "DeepLearning.AI • 2024",
+      "icon": "psychology_alt",
+      "url": "https://academy.langchain.com/certificates/llm-application-development-ken",
+      "description": "Advanced implementation of production-grade LangChain components, custom tools, and multi-step reasoning chains."
+    },
+    {
+      "id": "deep-learning",
+      "title": "Deep Learning Specialization",
+      "issuer": "Coursera / DeepLearning.AI • 2024",
+      "icon": "layers",
+      "url": "https://www.coursera.org/account/accomplishments/specialization/deep-learning-ken",
+      "description": "Comprehensive specialization covering Neural Networks, Deep Learning architectures, Optimization algorithms, and Convolutional Models."
+    }
+  ],
+  "skills": {
+    "backend": [
+      {"name": "Python", "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 128 128\"><path fill=\"#FFD845\" d=\"M49.33 62h29.159C86.606 62 93 55.132 93 46.981V19.183c0-7.912-6.632-13.856-14.555-15.176-5.014-.835-10.195-1.215-15.187-1.191-4.99.023-9.612.448-13.805 1.191C37.098 6.188 35 10.758 35 19.183V30h29v4H23.776c-8.484 0-15.914 5.108-18.237 14.811-2.681 11.12-2.8 17.919 0 29.53C7.614 86.983 12.569 93 21.054 93H31V79.952C31 70.315 39.428 62 49.33 62zm-1.838-39.11c-3.026 0-5.478-2.479-5.478-5.545 0-3.079 2.451-5.581 5.478-5.581 3.015 0 5.479 2.502 5.479 5.581-.001 3.066-2.465 5.545-5.479 5.545zm74.789 25.921C120.183 40.363 116.178 34 107.682 34H97v12.981C97 57.031 88.206 65 78.489 65H49.33C41.342 65 35 72.326 35 80.326v27.8c0 7.91 6.745 12.564 14.462 14.834 9.242 2.717 17.994 3.208 29.051 0C85.862 120.831 93 116.549 93 108.126V97H64v-4h43.682c8.484 0 11.647-5.776 14.599-14.66 3.047-9.145 2.916-17.799 0-29.529zm-41.955 55.606c3.027 0 5.479 2.479 5.479 5.547 0 3.076-2.451 5.579-5.479 5.579-3.015 0-5.478-2.502-5.478-5.579 0-3.068 2.463-5.547 5.478-5.547z\"></path></svg>"},
+      {"name": "FastAPI", "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 128 128\"><path fill=\"#049688\" d=\"M61.5 127.5C28.2 127.5 1.1 100.4 1.1 67.1S28.2 6.7 61.5 6.7s60.4 27.1 60.4 60.4-27.1 60.4-60.4 60.4zm0-112.8C32.6 14.7 9.1 38.2 9.1 67.1s23.5 52.4 52.4 52.4 52.4-23.5 52.4-52.4-23.5-52.4-52.4-52.4zm1.5 86.8L37.9 69.4l19.5-2.8L51.3 35l25.1 32.1-19.5 2.8 6.1 31.6z\"></path></svg>"},
+      {"name": "SQLAlchemy ORM", "icon": "storage"},
+      {"name": "APScheduler", "icon": "schedule"},
+      {"name": "REST APIs", "icon": "api"},
+      {"name": "Django REST", "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 128 128\"><path fill=\"#0C4B33\" d=\"M59.448 0h20.93v96.88c-10.737 2.04-18.62 2.855-27.181 2.855-25.551-.001-38.87-11.551-38.87-33.705 0-21.338 14.135-35.2 36.015-35.2 3.398 0 5.98.272 9.106 1.087zm0 48.765c-2.446-.815-4.485-1.086-7.067-1.086-10.6 0-16.717 6.523-16.717 17.939 0 11.145 5.845 17.26 16.582 17.26 2.309 0 4.212-.136 7.202-.542z\"></path><path fill=\"#0C4B33\" d=\"M113.672 32.321V80.84c0 16.717-1.224 24.735-4.893 31.666-3.398 6.661-7.883 10.873-17.124 15.494l-19.435-9.241c9.242-4.35 13.726-8.153 16.58-14 2.99-5.979 3.943-12.91 3.943-31.122V32.321zM92.742.111h20.93v21.474h-20.93z\"></path></svg>"}
+    ],
+    "genai": [
+      {"name": "LangGraph", "icon": "hub"},
+      {"name": "LangChain", "icon": "<svg viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\"><path fill=\"#ec9c13\" d=\"M8.13 7.89C3.65 7.89 0 11.53 0 16s3.65 8.11 8.13 8.11h15.74C28.35 24.11 32 20.47 32 16s-3.65-8.11-8.13-8.11H8.13z\"></path></svg>"},
+      {"name": "Vectorless RAG", "icon": "account_tree"},
+      {"name": "PageIndex (Custom)", "icon": "description"},
+      {"name": "ChromaDB", "icon": "grid_view"},
+      {"name": "OpenAI & Gemini APIs", "icon": "psychology"}
+    ],
+    "data_platforms": [
+      {"name": "ClickHouse (OLAP)", "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 128 128\"><path fill=\"#FFCC00\" d=\"M8 16h16v96H8zM32 16h16v96H32zM56 16h16v96H56zM80 16h16v96H80zM104 16h16v96h-16z\"></path></svg>"},
+      {"name": "MySQL", "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 128 128\"><path fill=\"#00618A\" d=\"M117.688 98.242c-6.973-.191-12.297.461-16.852 2.379-1.293.547-3.355.559-3.566 2.18.711.746.82 1.859 1.387 2.777 1.086 1.754 2.922 4.113 4.559 5.352 1.789 1.348 3.633 2.793 5.551 3.961 3.414 2.082 7.223 3.27 10.504 5.352 1.938 1.23 3.859 2.777 5.75 4.164.934.684 1.563 1.75 2.773 2.18v-.195c-.637-.812-.801-1.93-1.387-2.777l-2.578-2.578c-2.52-3.344-5.719-6.281-9.117-8.719-2.711-1.949-8.781-4.578-9.91-7.73l-.199-.199c1.922-.219 4.172-.914 5.949-1.391 2.98-.797 5.645-.59 8.719-1.387l4.164-1.187v-.793c-1.555-1.594-2.664-3.707-4.359-5.152-4.441-3.781-9.285-7.555-14.273-10.703-2.766-1.746-6.184-2.883-9.117-4.363-.988-.496-2.719-.758-3.371-1.586-1.539-1.961-2.379-4.449-3.566-6.738-2.488-4.793-4.93-10.023-7.137-15.066-1.504-3.437-2.484-6.828-4.359-9.91-9-14.797-18.687-23.73-33.695-32.508-3.195-1.867-7.039-2.605-11.102-3.57l-6.543-.395c-1.332-.555-2.715-2.184-3.965-2.977C16.977 3.52 4.223-3.312.539 5.672-1.785 11.34 4.016 16.871 6.09 19.746c1.457 2.012 3.32 4.273 4.359 6.539.688 1.492.805 2.984 1.391 4.559 1.438 3.883 2.695 8.109 4.559 11.695.941 1.816 1.98 3.727 3.172 5.352.727.996 1.98 1.438 2.18 2.973-1.227 1.715-1.297 4.375-1.984 6.543-3.098 9.77-1.926 21.91 2.578 29.137 1.383 2.223 4.641 6.98 9.117 5.156 3.918-1.598 3.043-6.539 4.164-10.902.254-.988.098-1.715.594-2.379v.199l3.57 7.133c2.641 4.254 7.324 8.699 11.297 11.699 2.059 1.555 3.68 4.242 6.344 5.152v-.199h-.199c-.516-.805-1.324-1.137-1.98-1.781-1.551-1.523-3.277-3.414-4.559-5.156-3.613-4.902-6.805-10.27-9.711-15.855-1.391-2.668-2.598-5.609-3.77-8.324-.453-1.047-.445-2.633-1.387-3.172-1.281 1.988-3.172 3.598-4.164 5.945-1.582 3.754-1.789 8.336-2.375 13.082-.348.125-.195.039-.398.199-2.762-.668-3.73-3.508-4.758-5.949-2.594-6.164-3.078-16.09-.793-23.191.59-1.836 3.262-7.617 2.18-9.316-.516-1.691-2.219-2.672-3.172-3.965-1.18-1.598-2.355-3.703-3.172-5.551-2.125-4.805-3.113-10.203-5.352-15.062-1.07-2.324-2.875-4.676-4.359-6.738-1.645-2.289-3.484-3.977-4.758-6.742-.453-.984-1.066-2.559-.398-3.566.215-.684.516-.969 1.191-1.191 1.148-.887 4.352.297 5.547.793 3.18 1.32 5.832 2.578 8.527 4.363 1.289.855 2.598 2.512 4.16 2.973h1.785c2.789.641 5.914.195 8.523.988 4.609 1.402 8.738 3.582 12.488 5.949 11.422 7.215 20.766 17.48 27.156 29.734 1.027 1.973 1.473 3.852 2.379 5.945 1.824 4.219 4.125 8.559 5.941 12.688 1.816 4.113 3.582 8.27 6.148 11.695 1.348 1.801 6.551 2.766 8.918 3.766 1.66.699 4.379 1.43 5.949 2.379 3 1.809 5.906 3.965 8.723 5.945 1.402.992 5.73 3.168 5.945 4.957z\"></path></svg>"},
+      {"name": "Salesforce CRM", "icon": "cloud_sync"},
+      {"name": "Pandas & NumPy", "icon": "analytics"},
+      {"name": "XGBoost", "icon": "query_stats"}
+    ],
+    "devops": [
+      {"name": "Docker", "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 128 128\"><path fill=\"#019BC6\" d=\"M124.8 52.1c-4.3-2.5-10-2.8-14.8-1.4-.6-5.2-4-9.7-8-12.9l-1.6-1.3-1.4 1.6c-2.7 3.1-3.5 8.3-3.1 12.3.3 2.9 1.2 5.9 3 8.3-1.4.8-2.9 1.9-4.3 2.4-2.8 1-5.9 2-8.9 2H79V49H66V24H51v12H26v13H13v14H1.8l-.2 1.5c-.5 6.4.3 12.6 3 18.5l1.1 2.2.1.2c7.9 13.4 21.7 19 36.8 19 29.2 0 53.3-13.1 64.3-40.6 7.4.4 15-1.8 18.6-8.9l.9-1.8-1.6-1zM28 39h10v11H28V39zm13.1 44.2c0 1.7-1.4 3.1-3.1 3.1-1.7 0-3.1-1.4-3.1-3.1 0-1.7 1.4-3.1 3.1-3.1 1.7.1 3.1 1.4 3.1 3.1zM28 52h10v11H28V52zm-13 0h11v11H15V52zm27.7 50.2c-15.8-.1-24.3-5.4-31.3-12.4 2.1.1 4.1.2 5.9.2 1.6 0 3.2 0 4.7-.1 3.9-.2 7.3-.7 10.1-1.5 2.3 5.3 6.5 10.2 14 13.8h-3.4zM51 63H40V52h11v11zm0-13H40V39h11v11zm13 13H53V52h11v11zm0-13H53V39h11v11zm0-13H53V26h11v11zm13 26H66V52h11v11z\"></path></svg>"},
+      {"name": "Git & GitHub", "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 128 128\"><path fill=\"#F34F29\" d=\"M124.742 58.378L69.625 3.264c-3.172-3.174-8.32-3.174-11.497 0L46.685 14.71l14.518 14.518c3.375-1.139 7.243-.375 9.932 2.314a9.66 9.66 0 012.293 9.993L87.42 55.529c3.385-1.167 7.292-.413 9.994 2.295 3.78 3.777 3.78 9.9 0 13.679a9.673 9.673 0 01-13.683 0 9.677 9.677 0 01-2.105-10.521L68.578 47.933l-.002 34.341a9.708 9.708 0 012.559 1.828c3.779 3.777 3.779 9.898 0 13.683-3.779 3.777-9.904 3.777-13.679 0-3.778-3.784-4.088-9.905-.311-13.683.934-.933 1.855-1.638 2.855-2.11V47.333c-1-.472-1.92-1.172-2.856-2.111-2.861-2.86-3.396-7.06-1.928-10.576L40.983 20.333 3.229 58.123c-3.175 3.177-3.155 8.325.02 11.5l55.126 55.114c3.173 3.174 8.325 3.174 11.503 0l54.86-54.858c3.175-3.176 3.178-8.327.004-11.501z\"></path></svg>"},
+      {"name": "ETL & Incremental Sync", "icon": "alt_route"},
+      {"name": "Postman", "icon": "mark_email_read"},
+      {"name": "Linux / Bash", "icon": "terminal"},
+      {"name": "Streamlit", "icon": "web"}
+    ]
+  },
+  "education": {
+    "degree": "Bachelor of Engineering — Computer Science and Engineering",
+    "institution": "Panimalar Institute of Technology, Affiliated to Anna University",
+    "period": "2019 — 2023",
+    "grade": "CGPA: 8.51 / 10 (85.1%)"
+  }
+}

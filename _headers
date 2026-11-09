@@ -1,0 +1,9 @@
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/portfolio-data.json
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.pdf
+  Cache-Control: public, max-age=3600
+
